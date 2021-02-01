@@ -47,6 +47,24 @@ $faqs = [
             font-family: sans-serif;
         }
 
+        header{
+            width: 100%;
+            background-color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        main{
+            margin-top: 160px;
+        }
+
+        .d-flex{
+            display: flex;
+            align-items: center;
+        }
+
         h2{
             padding-top: 40px;
             font-size: 24px;
@@ -64,18 +82,80 @@ $faqs = [
             width: 60%;
             margin: auto;
         }
+
+        h3, nav a{
+            color: #5f6368;
+        }
+
+        nav a{
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 5px 22px;
+        }
+
+        .active{
+            color: #3367d6;
+            border-bottom: 3px solid #3367d6;
+        }
+
+        footer{
+            margin-top: 40px;
+            background: #f5f5f5;
+            border-top: 1px solid #eee;
+            font-size: 11px;
+            line-height: 2.19;
+            padding: 10px 15px 10px 15px;
+        }
+        footer ul{
+            list-style: none;
+            margin-left: -8px;
+        }
+        footer ul li{
+            padding-right: 8px;
+            display: inline;
+            color: rgba(61,61,61,.8);
+        }
     </style>
 </head>
 <body>
     
-    <div class="container">
-        <?php foreach($faqs as $question => $answers){ ?>
-            <h2><?php echo $question; ?></h2>
-            <?php foreach($answers as $answer) {?>
-                <p><?php echo $answer; ?></p>
+    <header>
+        <div class="d-flex" style="padding: 10px">
+            <img src="https://lh3.googleusercontent.com/proxy/TPW0Asu2g0bGChX1wAAwdYA8zp9yqI3v3ArG-JjcctKM8Xb8qx5A0-2uJMeP17-yFW-mRDYwtbj2E-UR4F68gf9JYZopOs0-Kh-qGEEYlUnunck_lyIJyK4p5TDJvIBjJA" alt="google logo" style="width: 100px">
+            <h3>Privacy e termini</h3>
+        </div>
+        <nav style="margin-bottom: 7px">
+            <a href="#">Introduzione</a>
+            <a href="#">Norme sulla privacy</a>
+            <a href="#">Termini di servizio</a>
+            <a href="#">Tecnologie</a>
+            <a href="#" class="active">Domande frequenti</a>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <div class="container">
+            <?php foreach($faqs as $question => $answers){ ?>
+                <h2><?php echo $question; ?></h2>
+                <?php foreach($answers as $answer) {?>
+                    <p><?php echo $answer; ?></p>
+                <?php } ?> 
             <?php } ?> 
-        <?php } ?> 
-    </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <ul>
+                <li>Google</li>
+                <li>Tutto su Google</li>
+                <li>Privacy</li>
+                <li>Termini</li>
+            </ul>
+        </div>
+    </footer>
 
 </body>
 </html>
