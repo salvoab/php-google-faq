@@ -61,7 +61,7 @@ $faqs = [
         }
 
         .container {
-            width: 80%;
+            width: 60%;
             margin: auto;
         }
     </style>
